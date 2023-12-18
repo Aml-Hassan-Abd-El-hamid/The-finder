@@ -17,7 +17,7 @@ def streamlit_look():
     Modest front-end code:)
     """
     data={}
-    st.title("The product finder :)")
+    st.title("Welcome to the product finder :)")
     data["product_name"]= st.text_input("Please type your product name")
     data["api_key"] = st.text_input("Please enter your cohere API key", type="password")
     st.write("""If you don't know how to get your cohere API key, please do the following:
@@ -27,9 +27,9 @@ def streamlit_look():
     
     return data
 def match_the_product(product_name,api_key):
+    st.write("Please wait")
     d={"products":extract_product_names_from_json("Black Friday.json")}
     df = pd.DataFrame(d)
-    #api_key="eROrug8SSlFOgKNbi9RTFhibJ9iKnZ1W8QuwrNiW"
     co = cohere.Client(api_key)
     embeddings = co.embed(list(df["products"]), model="multilingual-22-12").embeddings
     embeddings_np = np.array(embeddings)  # Convert the list to numpy array 
@@ -40,19 +40,22 @@ def match_the_product(product_name,api_key):
     sorted_index =np.argsort(results)[0][::-1] # Sort in Descending Order
     df['products'][sorted_index].reset_index(drop=True)
     df["sorted_index"]=sorted_index
-    ind=0
-    while df["sorted_index"].iloc[ind]>20:
-        st.write(df.iloc[[df["sorted_index"].iloc[ind]]]["products"])
-        ind+=1
+
+    #show the most 3 closest items
+    st.write(df.iloc[[df["sorted_index"].iloc[0]]]["products"].to_string(index=False))
+    st.write(df.iloc[[df["sorted_index"].iloc[1]]]["products"].to_string(index=False))
+    st.write(df.iloc[[df["sorted_index"].iloc[2]]]["products"].to_string(index=False))
     
 def main():  
     user_data=streamlit_look()
     search = st.button("search")
     if search:
-        match_the_product(user_data["product_name"],user_data["api_key"])
-    
-    
-    
+        try:
+            match_the_product(user_data["product_name"],user_data["api_key"])
+            st.write("done")
+        except:
+            st.write("""An exception occurred
+                  You probably didn't enter a prober API key or a product name for the search""")
 
 if __name__ == "__main__":
     main()
