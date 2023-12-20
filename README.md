@@ -22,11 +22,11 @@ I still have 90 minutes to the deadline but I think I'm done :) through the last
 Here's a link to what the version that I sent looked like: https://the-finder-qmzffewnwa5tvvuvappepfq.streamlit.app/
 
 
-Here's a list of things that I intend to do in the future to turn that into a more CV friendly project
+Here's a list of things that I intend to do in the future to turn that into a more CV-friendly project
 
 ToDo:
 
-  1- Better looking website<br>
+  1- Improve website look<br>
   2- Get all the products<br>
-  3- Get more product data.<br>
+  3- Get more product data to train on.<br>
   4- Fine-tune the model of the data.<br>
