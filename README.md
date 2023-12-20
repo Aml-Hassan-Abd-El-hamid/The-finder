@@ -19,6 +19,9 @@ Which model should I use in particular? Will that thing is what I'm about to dis
 
 I still have 90 minutes to the deadline but I think I'm done :) through the last 3 hours, I figured out that HuggingFace might not be the most suitable or fastest option, especially with the Arabic language so I turned to Cohere, it gave very good results on the validation set.
 
+Here's a link to what the version that I sent looked like: https://the-finder-qmzffewnwa5tvvuvappepfq.streamlit.app/
+
+
 Here's a list of things that I intend to do in the future to turn that into a more CV friendly project
 
 ToDo:
