@@ -35,7 +35,7 @@ def match_the_product(product_name,api_key):
     embeddings_np = np.array(embeddings)  # Convert the list to numpy array 
     
     query_embedding = co.embed([product_name], model='multilingual-22-12').embeddings
-    results = np.array(query_embedding) @ embeddings_np.T # Shape [1, 768] @ [768, 6] = [1, 6]
+    results = np.array(query_embedding) @ embeddings_np.T # Shape [1, 768] @ [768, no.of available products] = [1, no.of available products]
     
     sorted_index =np.argsort(results)[0][::-1] # Sort in Descending Order
     df['products'][sorted_index].reset_index(drop=True)
