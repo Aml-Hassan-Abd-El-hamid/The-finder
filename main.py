@@ -1,6 +1,5 @@
 import streamlit as st
 import json
-import requests
 import pandas as pd
 import cohere
 import numpy as np
