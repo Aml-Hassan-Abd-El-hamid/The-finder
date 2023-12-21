@@ -17,7 +17,8 @@ I'm done with the initial look of the app, now I have about 4.5 hours, and I'm f
 I wasn't provided with training data, computational power or time :) so the best option that I know that I have is a pre-trained model from the amazing HuggingFace 🤗.<br>
 Which model should I use in particular? Will that thing is what I'm about to discover, for now, I just know that the main task that this model has to accomplish and the main characteristic that I have in my head currently is that this model has to know how to deal with <b>Arabic language text</b>.
 
-I still have 90 minutes to the deadline but I think I'm done :) through the last 3 hours, I figured out that HuggingFace might not be the most suitable or fastest option, especially with the Arabic language so I turned to Cohere, it gave very good results on the validation set.
+I still have 90 minutes to the deadline but I think I'm done :) through the last 3 hours, I figured out that HuggingFace might not be the most suitable or fastest option, especially with the Arabic language so I turned to Cohere, it gave very good results on the validation set.<br>
+I used Cohere's multilingual-22–12 model, it's an amazing model that supports over 100 languages, and it's considered the industry’s first multilingual text understanding model to support such no.of languages! you can know more about that model by taking a look [here](https://txt.cohere.com/multilingual/).
 
 Here's a link to what the version that I sent looked like: https://the-finder-qmzffewnwa5tvvuvappepfq.streamlit.app/
 
